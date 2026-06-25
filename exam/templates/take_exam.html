@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-12 mb-3">
+        <h2 class="fw-bold">{{ exam.title }}</h2>
+        <div class="alert alert-warning">
+            ⏱️ Time: <span id="timer" class="fw-bold"></span>
+        </div>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        {% for question in questions %}
+        <div class="card mb-3 shadow-sm">
+            <div class="card-body">
+                <h6 class="fw-bold">Q{{ forloop.counter }}. {{ question.question_text }}</h6>
+                <div class="mt-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question_{{ question.id }}" value="A" required>
+                        <label class="form-check-label">A) {{ question.option_a }}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question_{{ question.id }}" value="B">
+                        <label class="form-check-label">B) {{ question.option_b }}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question_{{ question.id }}" value="C">
+                        <label class="form-check-label">C) {{ question.option_c }}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question_{{ question.id }}" value="D">
+                        <label class="form-check-label">D) {{ question.option_d }}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-success btn-lg w-100">Submit Exam ✅</button>
+    </form>
+</div>
+
+<script>
+    let duration = {{ exam.duration }} * 60;
+    const timer = document.getElementById('timer');
+    const countdown = setInterval(() => {
+        let minutes = Math.floor(duration / 60);
+        let seconds = duration % 60;
+        timer.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        if (duration <= 0) {
+            clearInterval(countdown);
+            document.querySelector('form').submit();
+        }
+        duration--;
+    }, 1000);
+</script>
+
+{% endblock %}

@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background: #f5f0ff;
+    min-height: 100vh;
+    color: #3d2c6e;
+}
+
+.navbar {
+    background: #7c5cbf !important;
+    box-shadow: 0 2px 10px rgba(124, 92, 191, 0.2);
+    padding: 12px 25px;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e0d4f7;
+    border-radius: 16px;
+    color: #3d2c6e;
+    transition: transform 0.3s;
+    box-shadow: 0 3px 12px rgba(124, 92, 191, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(124, 92, 191, 0.2);
+}
+
+.card-title {
+    color: #5e3ea1;
+    font-weight: 700;
+}
+
+.card-text {
+    color: #7c6a9e;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #5e3ea1;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: #7c5cbf;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #5e3ea1;
+    color: white;
+}
+
+.btn-success {
+    background: #9b7fd4;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-success:hover {
+    background: #7c5cbf;
+    color: white;
+}
+
+.btn-danger {
+    background: #c0392b;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-warning {
+    background: #b39ddb;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+}
+
+.form-control {
+    background: #faf7ff;
+    border: 1.5px solid #d4bef7;
+    border-radius: 12px;
+    color: #3d2c6e;
+}
+
+.form-control:focus {
+    border-color: #7c5cbf;
+    box-shadow: 0 0 0 0.2rem rgba(124, 92, 191, 0.15);
+    background: white;
+    color: #3d2c6e;
+}
+
+.alert-warning {
+    background: #f0e9ff;
+    border: 1px solid #d4bef7;
+    color: #5e3ea1;
+    border-radius: 12px;
+}
+
+.table {
+    background: white !important;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table thead tr th {
+    background: #7c5cbf !important;
+    color: white !important;
+    font-weight: 600;
+    border: none !important;
+}
+
+.table tbody tr {
+    background: white !important;
+    color: #3d2c6e !important;
+}
+
+.table tbody tr:hover {
+    background: #f5f0ff !important;
+}
+
+.table tbody td {
+    color: #3d2c6e !important;
+    border-color: #e0d4f7 !important;
+    background: transparent !important;
+}
+
+.table-dark {
+    --bs-table-bg: white !important;
+    --bs-table-color: #3d2c6e !important;
+}
+
+.display-1 {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #5e3ea1;
+}
+
+.text-success {
+    color: #7c5cbf !important;
+}
+
+.text-danger {
+    color: #c0392b !important;
+}
+
+.text-muted {
+    color: #9b87c2 !important;
+}
+
+.text-info {
+    color: #7c5cbf !important;
+}
+
+.shadow {
+    box-shadow: 0 3px 15px rgba(124, 92, 191, 0.15) !important;
+}
+
+.form-check-input:checked {
+    background-color: #7c5cbf;
+    border-color: #7c5cbf;
+}
+
+.container {
+    padding-top: 20px;
+}

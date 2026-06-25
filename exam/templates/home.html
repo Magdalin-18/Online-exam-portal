@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-12 mb-4">
+        <h2 class="fw-bold">languages 📋</h2>
+        <p class="text-muted">Choose a language to start</p>
+    </div>
+
+    {% for exam in exams %}
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">{{ exam.title }}</h5>
+                <p class="card-text text-muted">{{ exam.description }}</p>
+                <p class="text-info">⏱️ Duration: {{ exam.duration }} minutes</p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'take_exam' exam.id %}" class="btn btn-primary w-100">Start Exam</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-warning w-100">Login to Start</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">No exams available yet!</div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
